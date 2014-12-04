@@ -1,5 +1,5 @@
 from flask import current_app
-from pyelasticsearch import ElasticSearch as PyElasticSearch
+from elasticsearch import ElasticSearch as PyElasticSearch
 
 
 class ElasticSearch(object):
