@@ -43,8 +43,7 @@ class ElasticSearch(object):
         # do we register on? app.extensions looks a little hackish (I don't
         # know flask well enough to be sure), but that's how it's done in
         # flask-pymongo so let's use it for now.
-        app.extensions['elasticsearch'] = PyElasticSearch(
-            app.config['ELASTICSEARCH_URL'], **kwargs)
+        app.extensions['elasticsearch'] = PyElasticSearch(**kwargs)
 
     def __getattr__(self, item):
         if not 'elasticsearch' in current_app.extensions.keys():
